@@ -1,0 +1,29 @@
+The Software is Made suing ASP.Net WEb API farmework and using
+Angular Software for front End services.
+
+Used the Web API MVC framework in ASP.net to call Backend Databsae  Calls.
+
+Used the Angular to Create a Real Time UI.
+
+The ChinessResturantAPIs-2 - original File contains the Asp.net WEB API.
+
+UI Interface  Contains the User Interface File.
+
+The order.service.ts has the API call from the ASP.NET.
+
+You can change the  BaseUrl: string = "http://localhost:10887/api/"  line to change your local server name.
+
+Type npm install to build the Angular project .
+
+Then use ng serve to strart the application.
+
+The ASP.net server must run to see the systen in working condition.
+
+The screen shots and the UI database and Software is in ScreenSHot folder.
+
+The Database file is in DB folder attach the File using sql server.
+
+The Run the Application.
+
+Enjoy!!!
+

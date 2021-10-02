@@ -1,0 +1,56 @@
+<div class="row">
+  <button class="col-md-2 bg-danger" style="background-color: orangered;" >In Queue {{countQueue}}</button>
+  <button class="col-md-2 btn btn-primary"  >Prepared {{countPrepaired}}</button>
+  <button class="col-md-2 btn btn-primary"  >Cancelled {{countCancelled}}</button>
+</div>
+<div  style="align-content: center;">
+  
+  <div *ngFor="let order of orderDetailsList; let i = index" style="margin-top: 2%; width: 25%;margin-left: 35%;">
+
+  <div class="row">
+
+    <div class="container" >
+      <div class="card" class="col-md-12 border border-primary rounded" >
+        <div class="" class="card-header border border-primary" style="background-color: orangered;" >
+          <div class="row">
+            <div class="col-md-6"> <p style="color: white;">{{order.OrderType}}</p></div>
+            <div class="col-md-6"> <p style="color: white;">{{order.OrderDate}}</p></div>
+            </div>
+        </div>
+        <div class="" class="card-header" style="background-color: orangered;">
+          <div class="row">
+            <div class="col-md-6"> <p style="color: white;">#{{i+1}}</p></div>
+            <div class="col-md-6"> <p style="color: white;">online</p></div>
+            </div>
+        </div>
+        <p>Pizza * 5}</p> 
+        <div *ngFor="let menu of order.Menu; let i = index">
+         <!-- <p>{{menu.desription}} * {{menu.Qty}}</p> --> 
+         <p>Pizza * 5}</p> 
+        </div>
+        <div class="card-footer" >
+          <div class="h-100 row align-items-center" *ngIf = "order.Status == 'In Queue'" [hidden]="order.Status !== 'In Queue' ">
+            <button type="button" class="btn btn-primary" (click)="StatusUpdate(order.Status,order.OrdeRreference)">Start Preparing</button>
+          </div>  
+          <div class="h-100 row align-items-center" *ngIf = "order.Status == 'Start Preparing'" [hidden]="order.Status !== 'Start Preparing' ">
+            <button type="button" class="btn btn-primary" (click)="StatusUpdate(order.Status,order.OrdeRreference)">Mark Prepared</button>
+          </div>  
+          <div class="h-100 row align-items-center" *ngIf = "order.Status == 'Mark Prepared'" [hidden]="order.Status !== 'Mark Prepared' ">
+            <button type="button" class="btn btn-primary" (click)="StatusUpdate(order.Status,order.OrdeRreference)">Picked</button>
+          </div>  
+          </div>
+      </div>
+      <br>
+    </div>
+    
+
+
+  </div>
+  
+
+</div>
+
+</div>
+
+
+
